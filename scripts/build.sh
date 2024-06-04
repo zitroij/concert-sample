@@ -21,3 +21,5 @@ docker build -f $sourcecodedir/Dockerfile -t ${IMAGE}:${TAG}
 
 DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE}:${TAG}" | awk -F@ '{print $2}')"
 
+echo $DIGEST
+

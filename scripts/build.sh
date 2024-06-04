@@ -15,5 +15,3 @@ docker build -f Dockerfile -t ${IMAGE}:${TAG}
 
 DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE}" | awk -F@ '{print $2}')"
 
-
-#docker push "${IMAGE}"

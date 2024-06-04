@@ -6,10 +6,11 @@
 ################
 
 
-if [ -f tmp] then
+if [ -f tmp]
+then
  echo "recreating  temp directory"
  rm -rf tmp
-fi 
+fi
 
 mkdir tmp
 cd tmp

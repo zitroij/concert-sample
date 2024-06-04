@@ -9,6 +9,6 @@ mkdir tmp
 
 cd tmp
 
-git clone https://github.ibm.com/roja/toolkit.git
+git clone git@github.ibm.com:roja/toolkit.git
 
 toolkit/build.sh

@@ -5,8 +5,13 @@
 #  
 ################
 
-mkdir tmp
 
+if [ -f tmp] then
+ echo "recreating  temp directory"
+ rm -rf tmp
+fi 
+
+mkdir tmp
 cd tmp
 
 git clone git@github.ibm.com:roja/toolkit.git

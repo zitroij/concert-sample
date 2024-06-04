@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTPUT_FILENAME="build-sbom.json"
+OUTPUT_FILENAME="cyclonedx-sbom.json"
 
 usage() {
     echo "Usage: $0 --src <path-to-source-code>"
@@ -34,7 +34,7 @@ if [ ! -d "$SRC_PATH" ]; then
 fi
 
 pushd "${SRC_PATH}" > /dev/null
-cdxgen -r -o "${OUTPUT_FILENAME}" --validate
+docker exec -it ibm-concert-toolkit bash -c 'cdxgen -r -o "${OUTPUT_FILENAME}" --validate'
 popd > /dev/null
 
 if [ -f "${SRC_PATH}/${OUTPUT_FILENAME}" ]; then

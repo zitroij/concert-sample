@@ -5,8 +5,9 @@
 #  
 ################
 
+echo `pwd`
 
-if [ -f tmp ]
+if [ -f "tmp" ]
 then
  echo "recreating  temp directory"
  rm -rf tmp

@@ -7,7 +7,7 @@
 
 echo `pwd`
 
-if [ -f "tmp" ]
+if [ -d "tmp" ]
 then
  echo "recreating  temp directory"
  rm -rf tmp
@@ -15,7 +15,6 @@ fi
 
 mkdir tmp
 cd tmp
-
 git clone git@github.ibm.com:roja/toolkit.git
 
 toolkit/build.sh

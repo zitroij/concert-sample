@@ -15,6 +15,8 @@ fi
 
 mkdir tmp
 cd tmp
-git clone git@github.ibm.com:roja/toolkit.git
+git clone --branch jio/envsubst-update git@github.ibm.com:roja/toolkit.git
 
 toolkit/build.sh
+
+rm -rf tmp

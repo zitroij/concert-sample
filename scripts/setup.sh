@@ -7,6 +7,8 @@
 
 echo `pwd`
 
+cp demo_build_envs.variables.template ../concert_data/demo_build_envs.variables
+
 if [ -d "tmp" ]
 then
  echo "recreating  temp directory"
@@ -20,6 +22,3 @@ git clone --branch jio/envsubst-update git@github.ibm.com:roja/toolkit.git
 toolkit/build.sh
 
 rm -rf tmp
-
-cp demo_build_envs.variables.template ../concert_data/demo_build_envs.variables
-

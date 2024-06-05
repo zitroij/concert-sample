@@ -1,10 +1,16 @@
 #!/bin/bash
 
+scriptdir=`dirname $0`
+cd ${scriptdir}
+scriptdir=`pwd`
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
-. ../concert_data/demo_build_envs.variables
+VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
+source ${VARIABLES_FILE}
 
-BUILD_FILENAME=../concert-data/build-config.yaml
+BUILD_FILENAME=${sourcecodedir}/concert_data/build-config.yaml
 
+touch ${BUILD_FILENAME}
 cat > ${BUILD_FILENAME} << EOD
 concert:
     build:

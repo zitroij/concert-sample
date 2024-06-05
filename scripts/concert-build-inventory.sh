@@ -29,7 +29,10 @@ concert:
 EOD
 
 
-#echo "${SRC_PATH}" > /dev/null
-#docker run -it --rm -u $(id -u):$(id -g) -v $sourcecodedir/concert_data:/input ibm-concert-toolkit bash -c 'cdxgen.sh --'
-#echo > /dev/null
+OUTPURDIR=${sourcecodedir}/concert_data
+
+OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-sbom.json"
+
+CODE_SCAN_COMMAND="/app/gen-build-inventory-sbom.sh --build-config ${BUILD_FILENAME} --output-file ${OUTPUT_FILENAME}"
+docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/data/out localhost/ibm-concert-toolkit:v1 bash -c "${CODE_SCAN_COMMAND}"
 

@@ -8,6 +8,7 @@ sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
+SRC_PATH=${sourcecodedir}/src
 
 if test -z "$IMAGE_NAME"; then
    IMAGE_NAME="concert-sample"
@@ -18,7 +19,7 @@ if test -z "$IMAGE_TAG"; then
 fi
 
 # shellcheck disable=SC2086
-docker build -f $sourcecodedir/Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} 
+docker build -f $SRC_PATH/Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} 
 
 
 IMAGE_DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE_NAME}:${IMAGE_TAG}" | awk -F@ '{print $2}')"

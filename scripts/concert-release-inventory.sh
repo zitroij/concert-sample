@@ -1,9 +1,15 @@
 #!/bin/bash
 
-OUTPUT_FILENAME="cyclonedx-sbom.json"
 
+. ../concert_data/demo_release_envs.variables
 
-echo "${SRC_PATH}" > /dev/null
-docker exec -it ibm-concert-toolkit bash -c 'cdxgen.sh --'
-echo > /dev/null
+RELEASE_FILENAME=../concert-data/release-config.yaml
 
+cat > ${RELEASE_FILENAME} << EOD
+concert:
+    release:
+      app_name: ${APP_NAME}
+      number: ${BUILD_NUMBER}
+      version: ${APP_VERSION}
+
+EOD

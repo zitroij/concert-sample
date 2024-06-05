@@ -1,0 +1,6 @@
+export APP_NAME=concert-sample
+export CODE_REPO_NAME=concert-sample
+export REPO_URL=https://github.ibm.com/roja/concert-sample
+export BUILD_NUMBER=1
+export IMAGE_NAME=localhost/concert-sample
+export IMAGE_TAG=sample

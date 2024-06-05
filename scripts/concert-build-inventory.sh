@@ -33,6 +33,6 @@ OUTPURDIR=${sourcecodedir}/concert_data
 
 OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-sbom.json"
 CONFIG_FILE="/data/out/build-config.yaml"
-CODE_SCAN_COMMAND="/app/gen-build-inventory-sbom.sh --build-config ${CONFIG_FILE} --output-file ${OUTPUT_FILENAME}"
+CODE_SCAN_COMMAND="gen-build-inventory-sbom.sh --build-config ${CONFIG_FILE} --output-file ${OUTPUT_FILENAME}"
 docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/data/out localhost/ibm-concert-toolkit:v1 bash -c "${CODE_SCAN_COMMAND}"
 

@@ -7,12 +7,13 @@ scriptdir=`pwd`
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
+OUTPURDIR=${sourcecodedir}/concert_data
 
 source ${VARIABLES_FILE}
 
 OUTPUT_FILENAME_SUFFIX="${BUILD_NUMBER}-build-vars"
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
-docker run -it --rm -u $(id -u):$(id -g) -v $sourcecodedir:/data localhost/ibm-concert-toolkit:v1 bash -c '/app/code-scan-sbom-cdxgen.sh --src /data --output-file ${OUTPUT_FILENAME_SUFFIX}'
+docker run -it --rm -u $(id -u):$(id -g) -v $sourcecodedir:/data -v $OUTPURDIR:/data/out localhost/ibm-concert-toolkit:v1 bash -c '/app/code-scan-sbom-cdxgen.sh --src /data --output-file ${OUTPUT_FILENAME_SUFFIX}'
 
 

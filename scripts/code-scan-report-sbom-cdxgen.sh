@@ -22,15 +22,7 @@ concert:
       app_name: ${APP_NAME}
       number: ${BUILD_NUMBER}
       version: ${APP_VERSION}
-      repository:
-        name: ${REPO_NAME}
-        url: ${REPO_URL}
-        commit_sha: ${REPO_COMMIT_SHA}
-        branch: ${REPO_BRANCH}
-      image:
-        name: ${IMAGE_NAME}
-        tag: ${IMAGE_TAG}
-        digest: ${IMAGE_DIGEST}
+
 EOD
 
 CODE_SCAN_COMMAND="code-scan-sbom-cdxgen.sh --src /data --output-file ${OUTPUT_FILENAME}"

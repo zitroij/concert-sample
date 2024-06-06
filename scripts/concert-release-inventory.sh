@@ -11,5 +11,4 @@ concert:
       app_name: ${APP_NAME}
       number: ${BUILD_NUMBER}
       version: ${APP_VERSION}
-
 EOD

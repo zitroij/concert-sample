@@ -5,9 +5,14 @@
 #  
 ################
 
-echo `pwd`
+scriptdir=`dirname $0`
+cd ${scriptdir}
+scriptdir=`pwd`
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
-cp demo_build_envs.variables.template ../concert_data/demo_build_envs.variables
+VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
+
+cp demo_build_envs.variables.template ${VARIABLES_FILE}
 
 if [ -d "tmp" ]
 then
@@ -22,3 +27,8 @@ git clone --branch jio/envsubst-update git@github.ibm.com:roja/toolkit.git
 toolkit/build.sh
 
 rm -rf tmp
+
+REPO_COMMIT_SHA="$(git rev-parse HEAD)"
+REPO_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+echo -e "export REPO_BRANCH=${REPO_BRANCH}"  >> ${VARIABLES_FILE}
+echo -e "export REPO_COMMIT_SHA=${REPO_COMMIT_SHA}"  >> ${VARIABLES_FILE}

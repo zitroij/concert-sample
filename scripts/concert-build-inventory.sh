@@ -10,7 +10,7 @@ source ${VARIABLES_FILE}
 
 BUILD_FILENAME=${sourcecodedir}/concert_data/build-config.yaml
 
-touch ${BUILD_FILENAME}
+
 cat > ${BUILD_FILENAME} << EOD
 concert:
     build:

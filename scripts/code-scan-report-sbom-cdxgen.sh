@@ -12,7 +12,7 @@ SRC_PATH=${sourcecodedir}/src
 
 source ${VARIABLES_FILE}
 
-OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-sbom.json"
+OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-cyclonedx-sbom.json"
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 

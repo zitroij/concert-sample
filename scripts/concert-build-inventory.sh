@@ -32,7 +32,7 @@ EOD
 OUTPURDIR=${sourcecodedir}/concert_data
 
 OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-built-assets.json"
-CONFIG_FILE="/data/out/build-config.yaml"
+CONFIG_FILE="/toolkit-data/build-config.yaml"
 CODE_SCAN_COMMAND="gen-build-inventory-sbom.sh --build-config ${CONFIG_FILE} --output-file ${OUTPUT_FILENAME}"
 docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/toolkit-data localhost/ibm-concert-toolkit:v1 bash -c "${CODE_SCAN_COMMAND}"
 

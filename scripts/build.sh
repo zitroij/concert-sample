@@ -1,55 +1,31 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+scriptdir=`dirname $0`
+scriptdir=`pwd`
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
+
+VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
+
+source ${VARIABLES_FILE}
+SRC_PATH=${sourcecodedir}/src
+
+if test -z "$IMAGE_NAME"; then
+   IMAGE_NAME="concert-sample"
+fi
+
+if test -z "$IMAGE_TAG"; then
+   IMAGE_TAG="sample"
+fi
 
 # shellcheck disable=SC2086
-docker build $DOCKER_BUILD_ARGS .
-docker push "${IMAGE}"
+docker build -f $SRC_PATH/Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} 
 
-DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE}" | awk -F@ '{print $2}')"
+IMAGE_DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE_NAME}:${IMAGE_TAG}" | awk -F@ '{print $2}')"
 
-#
-# Save the artifact to the pipeline, 
-# so it can be scanned and signed later
-#
-save_artifact app-image \
-    type=image \
-    "name=${IMAGE}" \
-    "digest=${DIGEST}" \
-    "tags=${IMAGE_TAG}"
+REPO_COMMIT_SHA="$(git rev-parse HEAD)"
+REPO_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
-#
-# Make sure you connect the built artifact to the repo and commit
-# it was built from. The source repo asset format is:
-#   <repo_URL>.git#<commit_SHA>
-#
-# In this example we have a repo saved as `app-repo`,
-# and we've used the latest cloned state to build the image.
-#
-url="$(load_repo app-repo url)"
-sha="$(load_repo app-repo commit)"
+echo -e "export IMAGE_DIGEST=${IMAGE_DIGEST}" >> ${VARIABLES_FILE}
+echo -e "export REPO_BRANCH=${REPO_BRANCH}"  >> ${VARIABLES_FILE}
+echo -e "export REPO_COMMIT_SHA=${REPO_COMMIT_SHA}"  >> ${VARIABLES_FILE}
 
-save_artifact app-image \
-"source=${url}.git#${sha}"
-
-# optional tags
-set +e
-TAG="$(cat /config/custom-image-tag)"
-set -e
-if [[ "${TAG}" ]]; then
-    #see build_setup script
-    IFS=',' read -ra tags <<< "${TAG}"
-    for i in "${!tags[@]}"
-    do
-        TEMP_TAG=${tags[i]}
-        TEMP_TAG=$(echo "$TEMP_TAG" | sed -e 's/^[[:space:]]*//')
-        echo "adding tag $i $TEMP_TAG"
-        ADDITIONAL_IMAGE_TAG="$ICR_REGISTRY_DOMAIN/$ICR_REGISTRY_NAMESPACE/$IMAGE_NAME:$TEMP_TAG"
-        docker tag "$IMAGE" "$ADDITIONAL_IMAGE_TAG"
-        docker push "$ADDITIONAL_IMAGE_TAG"
-
-        # save tags to pipelinectl
-        tags="$(load_artifact app-image tags)"
-        save_artifact app-image "tags=${tags},${TEMP_TAG}"
-    done
-fi

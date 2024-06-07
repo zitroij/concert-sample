@@ -5,15 +5,14 @@
 #  
 ################
 
+scriptdir=`dirname $0`
+cd ${scriptdir}
+scriptdir=`pwd`
+sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
-if [ -f tmp] then
- echo "recreating  temp directory"
- rm -rf tmp
-fi 
+VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
-mkdir tmp
-cd tmp
+echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
 
-git clone git@github.ibm.com:roja/toolkit.git
+docker pull stg.icr.io/cp/roja/ibm-concert-toolkit:v1-dev
 
-toolkit/build.sh

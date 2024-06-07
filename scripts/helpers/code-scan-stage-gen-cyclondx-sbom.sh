@@ -18,4 +18,3 @@ sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 CODE_SCAN_COMMAND="code-scan-sbom-cdxgen.sh --src /concert-sample-src --output-file ${OUTPUT_FILENAME}"
 docker run -it --rm -u $(id -u):$(id -g) -v ${SRC_PATH}:/concert-sample-src -v ${OUTPURDIR}:/toolkit-data localhost/ibm-concert-toolkit:v1 bash -c "${CODE_SCAN_COMMAND}"
-

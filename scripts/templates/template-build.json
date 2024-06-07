@@ -1,7 +1,7 @@
 {
   "bomFormat": "ConcertDef",
   "specVersion": "1.0",
-  "serialNumber": "${CONCERT_URN_PREFIX}:build:${BUILD_NUMBER}",
+  "serialNumber": "${CONCERT_URN_PREFIX}:${APP_NAME}:${COMPONENT_NAME}:build:${BUILD_NUMBER}",
   "version": 1,
   "metadata": {
     "timestamp": "${TIMESTAMP_UTC}",
@@ -19,9 +19,9 @@
   },
   "components": [
     {
-      "bom-ref": "img:${APP_NAME}",
+      "bom-ref": "img:${COMPONENT_NAME}",
       "type": "container",
-      "name": "${APP_NAME}",
+      "name": "${COMPONENT_NAME}",
       "purl": "${IMAGE_PURL}",
       "properties": [
         {

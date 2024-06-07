@@ -14,20 +14,5 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
 
-if [ -d "tmp" ]
-then
- echo "recreating  temp directory"
- rm -rf tmp
-fi
-
-mkdir tmp
-cd tmp
-git clone --branch jio/envsubst-update git@github.ibm.com:roja/toolkit.git
-
-toolkit/build.sh
-
-rm -rf tmp
-
-REPO_COMMIT_SHA="$(git rev-parse HEAD)"
-REPO_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+docker pull stg.icr.io/cp/roja/ibm-concert-toolkit:v1-dev
 

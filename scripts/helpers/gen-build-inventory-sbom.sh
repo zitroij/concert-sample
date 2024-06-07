@@ -23,5 +23,6 @@ outfile_name="${COMPONENT_NAME}-${BUILD_NUMBER}-built-assets.json"
   ###
   # upload build file
   ###
+  echo "generating build inventory json ${DATA_OUT_PATH}/${outfile_name} "
 
   envsubst < ${TEMPLATE_PATH}/template-build.json > ${DATA_OUT_PATH}/${outfile_name} 

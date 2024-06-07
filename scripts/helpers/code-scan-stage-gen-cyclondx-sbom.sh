@@ -3,7 +3,7 @@
 scriptdir=`dirname $0`
 cd ${scriptdir}
 scriptdir=`pwd`
-sourcecodedir=$(builtin cd $scriptdir/..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
@@ -13,7 +13,7 @@ SRC_PATH=${sourcecodedir}/src
 source ${VARIABLES_FILE}
 
 OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-cyclonedx-sbom.json"
-sourcecodedir=$(builtin cd $scriptdir/..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 
 cat > ${BUILD_FILENAME} << EOD

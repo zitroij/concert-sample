@@ -6,7 +6,7 @@ scriptdir=`pwd`
 
 
 OUTPUT_FILENAME="code-scancyclonedx-sbom.json"
-sourcecodedir=$(builtin cd $scriptdir/..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 echo "${SRC_PATH}" 
 docker exec -it ibm-concert-toolkit bash -c 'syft.sh --'

@@ -12,7 +12,7 @@ sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
-cp demo_build_envs.variables.template ${VARIABLES_FILE}
+echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
 
 if [ -d "tmp" ]
 then

@@ -19,7 +19,6 @@ export TIMESTAMP_UTC=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 export IMAGE_PURL=$IMAGE_NAME:$IMAGE_TAG
 export IMAGE_URI="${IMAGE_PURL}@${IMAGE_DIGEST}"
 
-
 outfile_name="${COMPONENT_NAME}-${BUILD_NUMBER}-built-assets.json"
   ###
   # upload build file

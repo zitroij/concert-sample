@@ -46,7 +46,7 @@
       "properties": [
         {
           "name": "commit_sha",
-          "value": "${COMMIT_SHA}"
+          "value": "${REPO_COMMIT_SHA}"
         },
         {
           "name": "branch",

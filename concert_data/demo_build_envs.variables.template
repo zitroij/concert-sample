@@ -1,6 +1,9 @@
+
+
 ######
 # Common Variables
 ###
+
 export APP_NAME=concert-sample
 export APP_VERSION=1.0.0.0
 
@@ -30,3 +33,7 @@ export CLUSTER_REGION="us-east-1"
 export CLUSTER_NAME="my_rosa_cluster"
 export CLUSTER_NAMESPACE="concert-sample"
 export APP_URL="https://internal.mycompany.io/myappservice"
+
+####
+####
+

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-TEMPLATE_PATH=/app/templates
+
+
+
+TEMPLATE_PATH=../templates
 [ -z "$DATA_OUT_PATH" ] && DATA_OUT_PATH="/toolkit-data"
 
 usage() {

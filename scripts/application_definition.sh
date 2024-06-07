@@ -14,34 +14,7 @@ SRC_PATH=${sourcecodedir}/src
 source ${VARIABLES_FILE}
 
 #####
-# source scanning stage
-####
-
-./heler/code-scan-stage-gen-cyclondx-sbom.sh
-
-#####
-# build image stage
-####
-
-./build.sh
-
-#####
 # gen concert app inventory
 ####
 
-./helper/gen-build-inventory.sh
-
-#####
-# image scanning stage
-####
-
-#./helper/image-scan-stage-gen-cyclondx-sbom.sh
-
-
-#####
-# send to concert stage
-####
-
-# work inprogress
-
-
+./helper/gen-concert-application.sh

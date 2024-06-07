@@ -10,7 +10,7 @@ cd ${scriptdir}
 scriptdir=`pwd`
 sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
-l s-ltra=${sourcecodedir}/concert_data/demo_build_envs.variables
+VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 cp demo_build_envs.variables.template ${VARIABLES_FILE}
 

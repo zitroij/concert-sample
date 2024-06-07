@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 scriptdir=`dirname $0`
-cd ${scriptdir}
 scriptdir=`pwd`
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
@@ -20,7 +19,6 @@ fi
 
 # shellcheck disable=SC2086
 docker build -f $SRC_PATH/Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} 
-
 
 IMAGE_DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' "${IMAGE_NAME}:${IMAGE_TAG}" | awk -F@ '{print $2}')"
 

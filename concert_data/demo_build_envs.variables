@@ -12,6 +12,10 @@ export CONCERT_URN_PREFIX=urn:ibm:appmgmt
 
 export CONCERT_APP_URN=${CONCERT_URN_PREFIX}:${APP_NAME}
 
+export ENVIRONMANET_NAME_1=development
+export ENVIRONMANET_NAME_2=pre-production
+export ENVIRONMANET_NAME_3=production
+
 ###
 # emulating a CI (build image )specific vaiable 
 ###

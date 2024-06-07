@@ -5,13 +5,8 @@ cd ${scriptdir}
 scriptdir=`pwd`
 
 
-OUTPUT_FILENAME="code-scancyclonedx-sbom.json"
 sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
-echo "${SRC_PATH}" 
-docker exec -it ibm-concert-toolkit bash -c 'syft.sh --'
 
-
-echo "${SRC_PATH}" > /dev/null
-docker run -it --rm -u $(id -u):$(id -g) -v $:/data localhost/ibm-concert-toolkit:v1 bash -c 'image-scan-sbom-syft.sh --images localhost/concert-sample'
-echo > /dev/null
+SCAN_COMMAND="image-scan-sbom-syft.sh --images ${IMAGE_NAME}:${IMAGE_TAG}"
+docker run -it --rm -u $(id -u):$(id -g) -v ${SRC_PATH}:/concert-sample-src -v ${OUTPURDIR}:/toolkit-data localhost/ibm-concert-toolkit:v1 bash -c "${SCAN_COMMAND}"

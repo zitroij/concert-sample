@@ -17,4 +17,4 @@ source ${VARIABLES_FILE}
 # gen concert app inventory
 ####
 
-./helper/gen-concert-application.sh
+./helpers/gen-concert-application.sh

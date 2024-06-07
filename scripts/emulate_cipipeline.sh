@@ -17,7 +17,7 @@ source ${VARIABLES_FILE}
 # source scanning stage
 ####
 
-./helper/code-scan-stage-gen-cyclondx-sbom.sh
+./helpers/code-scan-stage-gen-cyclondx-sbom.sh
 
 #####
 # build image stage
@@ -29,13 +29,13 @@ source ${VARIABLES_FILE}
 # gen concert app inventory
 ####
 
-./helper/gen-build-inventory.sh
+./helpers/gen-build-inventory.sh
 
 #####
 # image scanning stage
 ####
 
-#./helper/image-scan-stage-gen-cyclondx-sbom.sh
+#./helpers/image-scan-stage-gen-cyclondx-sbom.sh
 
 
 #####

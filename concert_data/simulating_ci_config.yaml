@@ -16,10 +16,8 @@ app:
 input-data:
   build:
     files:
-    - "/data/sbom.json"
+    - "/tiilkit-data/concert-sample-1-built-assets.json"
   cyclonedx:
     files:
-    - "/data/cyclonedx-sbom.json"
-  vulnerability:
-    files:
-    - "/data/cves.csv"
+    - "/toolkit-data/concert-sample-1-cyclonedx-sbom.json"
+

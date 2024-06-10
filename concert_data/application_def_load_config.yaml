@@ -14,12 +14,6 @@ app:
       password: "<your_password>"
   # TODO: certs
 input-data:
-  build:
+  application-def:
     files:
-    - "/data/sbom.json"
-  cyclonedx:
-    files:
-    - "/data/cyclonedx-sbom.json"
-  vulnerability:
-    files:
-    - "/data/cves.csv"
+    - "/toolkit-data/concert-sample-app-app-definition.json"

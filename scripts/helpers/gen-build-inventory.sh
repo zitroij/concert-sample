@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 
 scriptdir=`dirname $0`
-cd ${scriptdir}
+
 scriptdir=`pwd`
-sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
-TEMPLATE_PATH=../templates
+TEMPLATE_PATH=./templates
 
   # generate build file
   #

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 scriptdir=`dirname $0`
 scriptdir=`pwd`

@@ -1,3 +1,4 @@
+#!/bin/bash
 ####
 
 scriptdir=`dirname $0`
@@ -15,5 +16,14 @@ source ${VARIABLES_FILE}
 #####
 # gen concert app inventory
 ####
-
 ./helpers/gen-concert-application.sh
+
+cd ${scriptdir}
+#####
+# gen concert app inventory
+####
+#####
+# send to concert stage
+####
+cp ../concert_data/application_def_load_config.yaml ../concert_data/config.yaml
+./helpers/concert_upload_data.sh

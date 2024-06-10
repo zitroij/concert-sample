@@ -1,3 +1,4 @@
+#!/bin/bash
 ################
 # Get the toolkit image, use the toolkit image commands from the sript to generate the content.
 # Temporarily building this locally while we publish the image and do a docker pull.
@@ -6,9 +7,9 @@
 ################
 
 scriptdir=`dirname $0`
-cd ${scriptdir}
+
 scriptdir=`pwd`
-sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 

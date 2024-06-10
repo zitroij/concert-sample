@@ -1,0 +1,19 @@
+# Sample config file for toolkit upload
+# toolkit-upload-config.yaml
+general:
+  retries: 3
+  timeout: 30
+  verbose: true
+  insecure: true
+app:
+  base_url: "<https://example.com>"
+  instance_id: "<your_instance_id>"
+  auth:
+    user:
+      username: "<your_username>"
+      password: "<your_password>"
+  # TODO: certs
+input-data:
+  application-def:
+    files:
+    - "/toolkit-data/concert-sample-app-app-definition.json"

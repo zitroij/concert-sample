@@ -6,7 +6,7 @@
 ################
 
 scriptdir=`dirname $0`
-cd ${scriptdir}
+
 scriptdir=`pwd`
 sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 

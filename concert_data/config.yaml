@@ -1,0 +1,25 @@
+# Sample config file for toolkit upload
+# toolkit-upload-config.yaml
+general:
+  retries: 3
+  timeout: 30
+  verbose: true
+  insecure: true
+app:
+  base_url: "https://example.com"
+  instance_id: "your_instance_id"
+  auth:
+    user:
+      username: "your_username"
+      password: "your_password"
+  # TODO: certs
+input-data:
+  build:
+    files:
+    - "path/to/build-sbom.json"
+  cyclonedx:
+    files:
+    - "path/to/cyclonedx-sbom.json"
+  vulnerability:
+    files:
+    - "path/to/cves.csv"

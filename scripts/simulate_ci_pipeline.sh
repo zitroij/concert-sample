@@ -26,16 +26,16 @@ source ${VARIABLES_FILE}
 ./build.sh
 
 #####
-# gen concert build inventory
-####
-
-./helpers/gen-build-inventory.sh
-
-#####
 # image scanning stage
 ####
 
 #./helpers/image-scan-stage-gen-cyclondx-sbom.sh
+
+#####
+# gen concert build inventory
+####
+
+./helpers/gen-build-inventory.sh
 
 
 #####

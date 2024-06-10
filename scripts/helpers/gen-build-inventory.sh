@@ -4,7 +4,7 @@
 scriptdir=`dirname $0`
 
 scriptdir=`pwd`
-sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
+sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 

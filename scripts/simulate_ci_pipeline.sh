@@ -42,7 +42,4 @@ source ${VARIABLES_FILE}
 # send to concert stage
 ####
 cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
-./helpers/concert_updload_data.sh
-
-
-
+./helpers/concert_upload_data.sh

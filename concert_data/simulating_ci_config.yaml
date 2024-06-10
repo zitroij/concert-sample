@@ -16,7 +16,7 @@ app:
 input-data:
   build:
     files:
-    - "/tiilkit-data/concert-sample-1-built-assets.json"
+    - "/toolkit-data/concert-sample-1-built-assets.json"
   cyclonedx:
     files:
     - "/toolkit-data/concert-sample-1-cyclonedx-sbom.json"

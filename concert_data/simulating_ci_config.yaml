@@ -6,7 +6,7 @@ general:
   verbose: true
   insecure: true
 app:
-  base_url: "<https://example.com>"
+  base_url: "<https://concert_url:concert_port>"
   instance_id: "<your_instance_id>"
   auth:
     user:

@@ -26,4 +26,4 @@ cd ${scriptdir}
 # send to concert stage
 ####
 cp ../concert_data/application_def_load_config.yaml ../concert_data/config.yaml
-./helpers/concert_updload_data.sh
+./helpers/concert_upload_data.sh

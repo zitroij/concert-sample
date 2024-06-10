@@ -6,12 +6,12 @@ general:
   verbose: true
   insecure: true
 app:
-  base_url: "https://example.com"
-  instance_id: "your_instance_id"
+  base_url: "<https://example.com>"
+  instance_id: "<your_instance_id>"
   auth:
     user:
-      username: "your_username"
-      password: "your_password"
+      username: "<your_username>"
+      password: "<your_password>"
   # TODO: certs
 input-data:
   build:

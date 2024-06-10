@@ -21,4 +21,4 @@ outfile_name="${APP_NAME}-app-definition.json"
   # upload build file
   ###
 echo "generation application json ${DATA_OUT_PATH}/${outfile_name} "
-  envsubst < ${TEMPLATE_PATH}/template-app-definition.json > ${DATA_OUT_PATH}/${outfile_name} 
+envsubst < ${TEMPLATE_PATH}/template-app-definition.json > ${DATA_OUT_PATH}/${outfile_name} 

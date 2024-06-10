@@ -26,7 +26,7 @@ source ${VARIABLES_FILE}
 ./build.sh
 
 #####
-# gen concert app inventory
+# gen concert build inventory
 ####
 
 ./helpers/gen-build-inventory.sh
@@ -41,7 +41,8 @@ source ${VARIABLES_FILE}
 #####
 # send to concert stage
 ####
+cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
+./helpers/concert_updload_data.sh
 
-# work inprogress
 
 

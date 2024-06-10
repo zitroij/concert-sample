@@ -15,5 +15,14 @@ source ${VARIABLES_FILE}
 #####
 # gen concert app inventory
 ####
-
 ./helpers/gen-concert-application.sh
+
+
+#####
+# gen concert app inventory
+####
+#####
+# send to concert stage
+####
+cp ../concert_data/application_def_load_config.yaml ../concert_data/config.yaml
+./helpers/concert_updload_data.sh

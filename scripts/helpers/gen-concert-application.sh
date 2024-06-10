@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-#!/usr/bin/env bash
+#!/bin/bash
 
 scriptdir=`dirname $0`
 

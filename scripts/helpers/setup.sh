@@ -1,3 +1,4 @@
+#!/bin/bash
 ################
 # Get the toolkit image, use the toolkit image commands from the sript to generate the content.
 # Temporarily building this locally while we publish the image and do a docker pull.

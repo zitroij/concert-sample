@@ -1,3 +1,4 @@
+#!/bin/bash
 ####
 
 scriptdir=`dirname $0`

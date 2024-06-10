@@ -16,10 +16,10 @@ app:
 input-data:
   build:
     files:
-    - "path/to/build-sbom.json"
+    - "/data/sbom.json"
   cyclonedx:
     files:
-    - "path/to/cyclonedx-sbom.json"
+    - "/data/cyclonedx-sbom.json"
   vulnerability:
     files:
-    - "path/to/cves.csv"
+    - "/data/cves.csv"

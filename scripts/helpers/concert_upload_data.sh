@@ -13,4 +13,4 @@ SRC_PATH=${sourcecodedir}/src
 source ${VARIABLES_FILE}
 
 CODE_SCAN_COMMAND="upload-files.py"
-docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/toolkit-data localhost/ibm-concert-toolkit:v1 bash -c "${CODE_SCAN_COMMAND}"
+docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/toolkit-data ${CONCERT_TOOLKIT_IMAGE} bash -c "${CODE_SCAN_COMMAND}"

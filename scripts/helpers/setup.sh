@@ -15,5 +15,5 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
 
-docker pull stg.icr.io/cp/roja/ibm-concert-toolkit:v1-dev
+docker pull ${CONCERT_TOOLKIT_IMAGE}
 

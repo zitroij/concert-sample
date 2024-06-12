@@ -7,5 +7,5 @@ scriptdir=`pwd`
 
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
-SCAN_COMMAND="image-scan-sbom-syft.sh --images ${IMAGE_NAME}:${IMAGE_TAG}"
+SCAN_COMMAND="image-scan --images ${IMAGE_NAME}:${IMAGE_TAG}"
 docker run -it --rm -u $(id -u):$(id -g) -v ${SRC_PATH}:/concert-sample-src -v ${OUTPURDIR}:/toolkit-data ${CONCERT_TOOLKIT_IMAGE} bash -c "${SCAN_COMMAND}"

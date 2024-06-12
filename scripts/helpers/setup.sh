@@ -12,7 +12,7 @@ scriptdir=`pwd`
 sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
-
+source ${VARIABLES_FILE}
 echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
 
 docker pull ${CONCERT_TOOLKIT_IMAGE}

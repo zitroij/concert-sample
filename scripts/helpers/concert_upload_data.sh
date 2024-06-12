@@ -12,5 +12,5 @@ SRC_PATH=${sourcecodedir}/src
 
 source ${VARIABLES_FILE}
 
-CODE_SCAN_COMMAND="upload-files.py"
+CODE_SCAN_COMMAND="upload-concert"
 docker run -it --rm -u $(id -u):$(id -g) -v ${OUTPURDIR}:/toolkit-data ${CONCERT_TOOLKIT_IMAGE} bash -c "${CODE_SCAN_COMMAND}"

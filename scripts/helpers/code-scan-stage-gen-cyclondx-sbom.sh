@@ -16,5 +16,5 @@ OUTPUT_FILENAME="$REPO_NAME-$BUILD_NUMBER-cyclonedx-sbom.json"
 sourcecodedir=$(builtin cd $scriptdir/../..; pwd)
 
 
-CODE_SCAN_COMMAND="code-scan-sbom-cdxgen.sh --src /concert-sample --output-file ${OUTPUT_FILENAME}"
+CODE_SCAN_COMMAND="code-scan --src /concert-sample --output-file ${OUTPUT_FILENAME}"
 docker run -it --rm -u $(id -u):$(id -g) -v ${SRC_PATH}:/concert-sample -v ${OUTPURDIR}:/toolkit-data ${CONCERT_TOOLKIT_IMAGE} bash -c "${CODE_SCAN_COMMAND}"

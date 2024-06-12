@@ -25,7 +25,7 @@ export IBM_ENTITLEMENT_KEY=...
 ## Setup Instruction
 
 1) switch to the concert-sample/scripts directoty and run setup command.
-   ./scripts/helper/setup.sh
+   ./helpers/setup.sh
 2) Update environment details, switch to concert-sample/cncert_data and update the application_def_load_config.yaml and the simulating_ci_config.yaml.  Enter the proper information for the target environment you want to use on both configu files.
 
    app:

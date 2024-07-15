@@ -4,6 +4,7 @@
 # Common Variables
 ###
 export CONCERT_TOOLKIT_IMAGE=stg.icr.io/cp/roja/ibm-concert-toolkit:v1-dev
+export CONCERT_TOOLKIT_UTILS_REPO=https://github.ibm.com/roja/concert-utils
 export APP_NAME=concert-sample-app
 export APP_VERSION=1.0.0.0
 
@@ -38,7 +39,3 @@ export CLUSTER_REGION="us-east-1"
 export CLUSTER_NAME="my_rosa_cluster"
 export CLUSTER_NAMESPACE="concert-sample"
 export APP_URL="https://internal.mycompany.io/myappservice"
-
-####
-####
-

@@ -17,3 +17,7 @@ echo -e "export DATA_OUT_PATH=${sourcecodedir}/concert_data"   >> ${VARIABLES_FI
 
 docker pull ${CONCERT_TOOLKIT_IMAGE}
 
+
+git clone ${CONCERT_TOOLKIT_UTILS_REPO}
+
+

@@ -16,7 +16,7 @@ source ${VARIABLES_FILE}
 #####
 # gen concert app inventory
 ####
-./helpers/gen-concert-application.sh
+./concert-utils/helpers/gen-concert-application.sh
 
 cd ${scriptdir}
 #####
@@ -26,4 +26,4 @@ cd ${scriptdir}
 # send to concert stage
 ####
 cp ../concert_data/application_def_load_config.yaml ../concert_data/config.yaml
-./helpers/concert_upload_data.sh
+./concert-utils/helpers/concert_upload_data.sh

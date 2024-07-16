@@ -17,7 +17,7 @@ source ${VARIABLES_FILE}
 # source scanning stage
 ####
 
-./helpers/code-scan-stage-gen-cyclondx-sbom.sh
+./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh
 
 #####
 # build image stage
@@ -29,17 +29,17 @@ source ${VARIABLES_FILE}
 # image scanning stage
 ####
 
-#./helpers/image-scan-stage-gen-cyclondx-sbom.sh
+#./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh
 
 #####
 # gen concert build inventory
 ####
 
-./helpers/gen-build-inventory.sh
+./concert-utils/helpers/gen-build-inventory.sh
 
 
 #####
 # send to concert stage
 ####
 cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
-./helpers/concert_upload_data.sh
+./concert-utils/helpers/concert_upload_data.sh

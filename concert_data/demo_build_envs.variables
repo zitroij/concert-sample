@@ -4,7 +4,7 @@
 # Common Variables
 ###
 export CONCERT_TOOLKIT_IMAGE=stg.icr.io/cp/roja/ibm-concert-toolkit:v1-dev
-export CONCERT_TOOLKIT_UTILS_REPO=https://github.ibm.com/roja/concert-utils
+export CONCERT_TOOLKIT_UTILS_REPO=git@github.ibm.com:roja/concert-utils.git
 export APP_NAME=concert-sample-app
 export APP_VERSION=1.0.0.0
 

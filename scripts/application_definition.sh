@@ -8,9 +8,6 @@ sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
-OUTPURDIR=${sourcecodedir}/concert_data
-SRC_PATH=${sourcecodedir}/src
-
 source ${VARIABLES_FILE}
 
 #####
@@ -19,9 +16,7 @@ source ${VARIABLES_FILE}
 ./concert-utils/helpers/gen-concert-application.sh
 
 cd ${scriptdir}
-#####
-# gen concert app inventory
-####
+
 #####
 # send to concert stage
 ####

@@ -8,38 +8,38 @@ sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
-OUTPUTDIR=${sourcecodedir}/concert_data
-SRC_PATH=${sourcecodedir}/src
-
 source ${VARIABLES_FILE}
 
-#####
-# source scanning stage
-####
+export OUTPUTDIR=${sourcecodedir}/concert_data
+export SRC_PATH=${sourcecodedir}/src
+
+echo "#####"
+echo "# source scanning stage #"
+echo "#### "
 
 ./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh
 
-#####
-# build image stage
-####
+echo "#####"
+echo "# build image stage #"
+echo "####"
 
 ./build.sh
 
-#####
-# image scanning stage
-####
+echo "#####"
+echo "# image scanning stage #"
+echo "####"
 
 #./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh
 
-#####
-# gen concert build inventory
-####
+echo "#####"
+echo "# gen concert build inventory #"
+echo "####"
 
 ./concert-utils/helpers/gen-build-inventory.sh
 
 
-#####
-# send to concert stage
-####
+echo "#####"
+echo "# send to concert stage #"
+echo "####"
 cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
 ./concert-utils/helpers/concert_upload_data.sh

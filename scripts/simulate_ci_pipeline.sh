@@ -41,5 +41,12 @@ echo "####"
 echo "#####"
 echo "# send to concert stage #"
 echo "####"
-cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
+
+###
+# upload build file
+###
+#echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
+
+envsubst < ${OUTPUTDIR}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
+
 ./concert-utils/helpers/concert_upload_data.sh

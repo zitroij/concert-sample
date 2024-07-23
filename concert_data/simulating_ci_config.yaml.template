@@ -1,0 +1,23 @@
+# Sample config file for toolkit upload
+# toolkit-upload-config.yaml
+general:
+  retries: 3
+  timeout: 30
+  verbose: true
+  insecure: true
+app:
+  base_url: "${CONCERT_URL}"
+  instance_id: "${INSTANCE_ID"
+  auth:
+    user:
+      username: "${USER_NAME}"
+      password: "${PASSWORD}"
+  # TODO: certs
+input-data:
+  build:
+    files:
+    - "/toolkit-data/${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
+  cyclonedx:
+    files:
+    - "/toolkit-data/${COMPONENT_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+

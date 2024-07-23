@@ -20,5 +20,10 @@ cd ${scriptdir}
 #####
 # send to concert stage
 ####
-cp ../concert_data/application_def_load_config.yaml ../concert_data/config.yaml
+###
+# upload build file
+###
+#echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
+
+envsubst < ${OUTPUTDIR}/application_def_load_config.yaml.template > ${OUTPUTDIR}/config.yaml
 ./concert-utils/helpers/concert_upload_data.sh

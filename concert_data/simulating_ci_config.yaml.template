@@ -7,7 +7,7 @@ general:
   insecure: true
 app:
   base_url: "${CONCERT_URL}"
-  instance_id: "${INSTANCE_ID"
+  instance_id: "${INSTANCE_ID}"
   auth:
     user:
       username: "${USER_NAME}"

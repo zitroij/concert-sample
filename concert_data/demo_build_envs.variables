@@ -5,10 +5,10 @@
 ###
 export CONCERT_TOOLKIT_IMAGE=stg.icr.io/cp/roja/ibm-concert-toolkit:latest
 export CONCERT_TOOLKIT_UTILS_REPO=git@github.ibm.com:roja/concert-utils.git
-export CONCERT_URL=
-export INSTANCE_ID=
-export USER_NAME=
-export PASSWORD=
+export CONCERT_URL="your concert_url"
+export INSTANCE_ID="0000-0000-0000-0000"
+export USER_NAME="concert_user_name"
+export PASSWORD="concert_user_password"
 
 export APP_NAME=concert-sample-app
 export APP_VERSION=1.0.0.0

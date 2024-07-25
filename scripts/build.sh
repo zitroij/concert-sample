@@ -28,4 +28,5 @@ REPO_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo -e "export IMAGE_DIGEST=${IMAGE_DIGEST}" >> ${VARIABLES_FILE}
 echo -e "export REPO_BRANCH=${REPO_BRANCH}"  >> ${VARIABLES_FILE}
 echo -e "export REPO_COMMIT_SHA=${REPO_COMMIT_SHA}"  >> ${VARIABLES_FILE}
+echo -e "export DEPLOYMENT_REPO_COMMIT_SHA=${REPO_COMMIT_SHA}"  >> ${VARIABLES_FILE}
 

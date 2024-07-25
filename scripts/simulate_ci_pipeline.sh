@@ -17,6 +17,8 @@ echo "#####"
 echo "# source scanning stage #"
 echo "#### "
 
+OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+
 ./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh
 
 echo "#####"
@@ -34,12 +36,19 @@ echo "####"
 echo "#####"
 echo "# gen concert build inventory #"
 echo "####"
-
+OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
 ./concert-utils/helpers/gen-build-inventory.sh
 
 
 echo "#####"
 echo "# send to concert stage #"
 echo "####"
-cp ../concert_data/simulating_ci_config.yaml ../concert_data/config.yaml
+
+###
+# upload build file
+###
+#echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
+
+envsubst < ${OUTPUTDIR}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
+
 ./concert-utils/helpers/concert_upload_data.sh

@@ -6,14 +6,14 @@ general:
   verbose: true
   insecure: true
 app:
-  base_url: "<https://example.com>"
-  instance_id: "<your_instance_id>"
+  base_url: "${CONCERT_URL}"
+  instance_id: "${INSTANCE_ID}"
   auth:
     user:
-      username: "<your_username>"
-      password: "<your_password>"
+      username: "${USER_NAME}"
+      password: "${PASSWORD}"
   # TODO: certs
 input-data:
   application-def:
     files:
-    - "/toolkit-data/concert-sample-app-app-definition.json"
+    - "/toolkit-data/${APP_NAME}-app-definition.json"

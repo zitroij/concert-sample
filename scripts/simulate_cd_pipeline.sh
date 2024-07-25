@@ -14,7 +14,7 @@ export OUTPUTDIR=${sourcecodedir}/concert_data
 
 
 echo "#####"
-echo "# gen concert build inventory #"
+echo "# gen concert deploy inventory #"
 echo "####"
 
 ./concert-utils/helpers/gen-deploy-inventory.sh

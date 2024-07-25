@@ -17,8 +17,8 @@ echo "#####"
 echo "# gen concert deploy inventory #"
 echo "####"
 # define file name as input
-config_outfile_name="OUTPUTDIR/${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"
-./concert-utils/helpers/gen-deploy-inventory.sh --config_file ${config_outfile_name}
+
+./concert-utils/helpers/gen-deploy-inventory.sh
 
 
 ###

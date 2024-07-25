@@ -16,4 +16,4 @@ app:
 input-data:
   deploy:
     files:
-    - "/toolkit-data/${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
+    - "/toolkit-data/${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"

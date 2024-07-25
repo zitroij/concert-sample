@@ -17,6 +17,8 @@ echo "#####"
 echo "# source scanning stage #"
 echo "#### "
 
+OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+
 ./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh
 
 echo "#####"
@@ -34,7 +36,7 @@ echo "####"
 echo "#####"
 echo "# gen concert build inventory #"
 echo "####"
-
+OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
 ./concert-utils/helpers/gen-build-inventory.sh
 
 

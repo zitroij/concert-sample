@@ -1,48 +1,56 @@
-
-
 ######
 # Common Variables
 ###
-export CONCERT_TOOLKIT_IMAGE=cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest
-export CONCERT_TOOLKIT_UTILS_REPO=git@github.ibm.com:roja/concert-utils.git
+export CONCERT_TOOLKIT_IMAGE="cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest"ß
+export CONCERT_TOOLKIT_UTILS_REPO="git@github.ibm.com:roja/concert-utils.git"
 export CONCERT_URL="your concert_url"
 export INSTANCE_ID="0000-0000-0000-0000"
 export USER_NAME="concert_user_name"
 export PASSWORD="concert_user_password"
 
-export APP_NAME=concert-sample-app
-export APP_VERSION=1.0.0.0
+##
+# Application Variabbles
+##
+export APP_NAME="concert-sample-app"
+export APP_VERSION="1.0.0.0"
 
-export COMPONENT_NAME=concert-sample
+export ENVIRONMANET_NAME_1="development"
+export ENVIRONMANET_NAME_2="pre-production"
+export ENVIRONMANET_NAME_3="production"
 
-export ENVIRONMANET_NAME_1=development
-export ENVIRONMANET_NAME_2=pre-production
-export ENVIRONMANET_NAME_3=production
+export COMPONENT_NAME="concert-sample"
+
+export BUSINESS_NAME="Acme Inc."
+export BUSINESS_UNIT_NAME="unit 1"
+export CONTACT_EMAIL="myemail@acme.com"
+export CONCAT_PHONE="(123) 123-1234"
+
+export APPLICATION_CRITICALITY=5
 
 ###
-# emulating a CI (build image )specific vaiable 
+# emulating a Build Inventory SBOM specific vaiable 
 ###
-export REPO_NAME=concert-sample
-export REPO_URL=https://github.ibm.com/roja/concert-sample
-export REPO_BRANCH=main
-export BUILD_NUMBER=1
-export IMAGE_NAME=localhost/concert-sample
-export IMAGE_TAG=sample
+export REPO_NAME="concert-sample"
+export REPO_URL="https://github.ibm.com/roja/concert-sample"
+export REPO_BRANCH="main"
+export BUILD_NUMBER="1"
+export IMAGE_NAME="localhost/concert-sample"
+export IMAGE_TAG="sample"
+export INVENTORY_BUILD=${BUILD_NUMBER}
+###
+# emulating a Deployment Inventory specific vaiable 
+###
 
-###
-# emulating a CD (deploy/release )specific vaiable 
-###
-
-export ENV_TARGET=my_production_env
-export DEPLOYMENT_REPO_NAME=concert-sample
-export DEPLOYMENT_REPO_URL=https://github.ibm.com/concert-sample
-export DEPLOYMENT_REPO_BRANCH=main
-export K8_PLATFORM=rosa
-export ENV_PLATFORM=aws
+export DEPLOYMENT_REPO_NAME="concert-sample"
+export DEPLOYMENT_REPO_URL="https://github.ibm.com/concert-sample"
+export DEPLOYMENT_REPO_BRANCH="main"
+export DEPLOYMENT_BUILD_NUMBER=2
+export K8_PLATFORM="rosa"
+export ENV_PLATFORM="aws"
 export CLUSTER_ID="arn:"
 export CLUSTER_REGION="us-east-1"
 export CLUSTER_NAME="my_rosa_cluster"
 export CLUSTER_NAMESPACE="concert-sample"
-
+export ENVIRONMENT_TARGET="production"
 export ACCESS_POINT_NAME="concert-sample-api"
 export APP_URL="https://internal.mycompany.io/myappservice"

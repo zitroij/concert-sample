@@ -13,7 +13,9 @@ source ${VARIABLES_FILE}
 #####
 # gen concert app inventory
 ####
-./concert-utils/helpers/gen-concert-application.sh
+export APP_FILE_NAME="${APP_NAME}-${APP_VERSION}-application.json"
+
+./concert-utils/helpers/gen-concert-application.sh --outfile ${APP_FILE_NAME}
 
 cd ${scriptdir}
 

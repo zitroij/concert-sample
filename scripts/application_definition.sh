@@ -14,10 +14,10 @@ export APP_FILE_NAME="${APP_NAME}-${APP_VERSION}-application.json"
 
 echo "#####"
 echo "# gen concert app inventory"
-echo "# ./concert-utils/helpers/gen-concert-application.sh --outfile ${APP_FILE_NAME}"
+echo "# ./concert-utils/helpers/gen-concert-application.sh --outputfile ${APP_FILE_NAME}"
 echo "####"
 
-./concert-utils/helpers/gen-concert-application.sh --outfile ${APP_FILE_NAME}
+./concert-utils/helpers/gen-concert-application.sh --outputfile ${APP_FILE_NAME}
 
 echo "#####"
 echo "# send to concert stage"

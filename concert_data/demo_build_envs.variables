@@ -26,7 +26,10 @@ export CONTACT_EMAIL="myemail@acme.com"
 export CONCAT_PHONE="(123) 123-1234"
 
 export APPLICATION_CRITICALITY=5
-
+export END_POINT_NAME="concert-sample_api"
+export ACCESS_POINT_NAME=${END_POINT_NAME}
+export COMPONENT_ENDPOINTS="/concert-sample"
+export NETWORK_EXPOSURE="public"
 ###
 # emulating a Build Inventory SBOM specific vaiable 
 ###
@@ -52,5 +55,4 @@ export CLUSTER_REGION="us-east-1"
 export CLUSTER_NAME="my_rosa_cluster"
 export CLUSTER_NAMESPACE="concert-sample"
 export ENVIRONMENT_TARGET="production"
-export ACCESS_POINT_NAME="concert-sample-api"
 export APP_URL="https://internal.mycompany.io/myappservice"

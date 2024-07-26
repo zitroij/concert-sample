@@ -15,9 +15,9 @@ export OUTPUTDIR=${sourcecodedir}/concert_data
 echo "#####"
 echo "# gen concert deploy inventory #"
 echo "####"
-
+export DEPLOY_FILE_NAME="${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"
 # define file name as input
-./concert-utils/helpers/gen-deploy-inventory.sh
+./concert-utils/helpers/gen-deploy-inventory.sh --outputfile ${DEPLOY_FILE_NAME}
 
 ###
 # upload build file

@@ -15,40 +15,37 @@ export SRC_PATH=${sourcecodedir}/src
 
 echo "#####"
 echo "# source scanning stage #"
-echo "#### "
-
-OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
-
-./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh
+echo "# ./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh --outputfile ${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json "
+echo "#####"
+./concert-utils/helpers/code-scan-stage-gen-cyclondx-sbom.sh --outputfile "${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
 
 echo "#####"
 echo "# build image stage #"
-echo "####"
+echo "#####"
 
 ./build.sh
 
+export CYCLONEDX_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+
 echo "#####"
 echo "# image scanning stage #"
-echo "####"
+echp "# ./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}"
+echo "#####"
+#./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}
 
-#./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh
+
+export BUILD_FILE_NAME="${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
 
 echo "#####"
 echo "# gen concert build inventory #"
-echo "####"
-OUTPUT_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
-./concert-utils/helpers/gen-build-inventory.sh
+echo "# ./concert-utils/helpers/gen-build-inventory.sh --outputfile ${BUILD_FILE_NAME}"
+echo "#####"
+./concert-utils/helpers/gen-build-inventory.sh --outputfile ${BUILD_FILE_NAME}
 
 
 echo "#####"
 echo "# send to concert stage #"
-echo "####"
-
-###
-# upload build file
-###
-#echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
-
+echo "#./concert-utils/helpers/concert_upload_data.sh"
+echo "#####"
 envsubst < ${OUTPUTDIR}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
-
 ./concert-utils/helpers/concert_upload_data.sh

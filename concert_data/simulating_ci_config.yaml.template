@@ -16,8 +16,8 @@ app:
 input-data:
   build:
     files:
-    - "/toolkit-data/${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
+    - "/toolkit-data/${BUILD_FILE_NAME}"
   cyclonedx:
     files:
-    - "/toolkit-data/${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+    - "/toolkit-data/${CYCLONEDX_FILENAME}"
 

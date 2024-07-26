@@ -31,7 +31,7 @@ echo "#####"
 echo "# image scanning stage #"
 echp "# ./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}"
 echo "#####"
-./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}
+#./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}
 
 
 export BUILD_FILE_NAME="${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"

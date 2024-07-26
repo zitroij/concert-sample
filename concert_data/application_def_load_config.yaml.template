@@ -16,4 +16,4 @@ app:
 input-data:
   application-def:
     files:
-    - "/toolkit-data/${APP_NAME}-app-definition.json"
+    - "/toolkit-data/${APP_FILE_NAME}"

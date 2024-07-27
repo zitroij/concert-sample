@@ -29,14 +29,15 @@ export CYCLONEDX_FILENAME="${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
 
 echo "#####"
 echo "# image scanning stage #"
-echp "# ./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}"
+echo "# ./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}"
 echo "#####"
 #./concert-utils/helpers/image-scan-stage-gen-cyclondx-sbom.sh --outputfile ${CYCLONEDX_FILENAME}
 
 
 export BUILD_FILE_NAME="${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
 CONCERT_DEF_CONFIG_FILE=build-${COMPONENT_NAME}-${BUILD_NUMBER}-config.yaml
-envsubst < ${SCRIPT_DIR}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
+echo "envsubst < ${sourcecodedir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}"
+envsubst < ${sourcecodedir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# gen concert build inventory (build sbom) "

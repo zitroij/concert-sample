@@ -48,7 +48,6 @@ echo "# ./concert-utils/helpers/gen-build-inventory.sh --outputdir ${OUTPUTDIR} 
 echo "#####"
 ./concert-utils/helpers/gen-build-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
-
 echo "#####"
 echo "# send to concert stage #"
 echo "#./concert-utils/helpers/concert_upload_data.sh"

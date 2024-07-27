@@ -18,7 +18,7 @@ echo "####"
 export DEPLOY_FILENAME="${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"
 
 CONCERT_DEF_CONFIG_FILE=deploy-${COMPONENT_NAME}-${BUILD_NUMBER}-config.yaml
-envsubst < ${SCRIPT_DIR}/${TEMPLATE_PATH}/deploy-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
+envsubst < ${scriptdir}/${TEMPLATE_PATH}/deploy-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 
 echo "generating deploy sbom"
 echo "./concert-utils/helpers/gen-deploy-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}" 

@@ -13,8 +13,6 @@ sourcecodedir=$(builtin cd $scriptdir/..; pwd)
 
 VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 source ${VARIABLES_FILE}
-echo -e "export OUTPUTDIR=${sourcecodedir}/concert_data"   >> ${VARIABLES_FILE}
-
 
 git clone ${CONCERT_TOOLKIT_UTILS_REPO}
 

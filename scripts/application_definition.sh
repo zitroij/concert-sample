@@ -10,6 +10,7 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
 
+export OUTPUTDIR=${sourcecodedir}/concert_data
 
 ###
 # application toolkit config yaml

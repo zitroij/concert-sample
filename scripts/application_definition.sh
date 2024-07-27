@@ -21,10 +21,10 @@ envsubst < ${scriptdir}/${TEMPLATE_PATH}/app-sbom-values.yaml.template > ${OUTPU
 
 echo "#####"
 echo "# gen concert app inventory"
-echo "# ./concert-utils/helpers/gen-concert-application.sh --configfile ${CONCERT_DEF_CONFIG_FILE}"
+echo "# ./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
 echo "####"
 
-./concert-utils/helpers/gen-concert-application.sh --configfile ${CONCERT_DEF_CONFIG_FILE}
+./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# send to concert stage"

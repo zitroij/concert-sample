@@ -1,6 +1,6 @@
 concert:
   application:
-    output_file: "${OUTPUT_FILENAME}" # optional
+    output_file: "${APP_FILE_NAME}" # optional
     app_name: "${APP_NAME}"
     version: "${APP_VERSION}"
     business:

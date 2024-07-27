@@ -29,5 +29,4 @@ echo "./concert-utils/helpers/gen-deploy-inventory.sh --outputdir ${OUTPUTDIR} -
 ###
 #echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/simulating_cd_config.yaml.template > ${OUTPUTDIR}/config.yaml
-
-./concert-utils/helpers/concert_upload_data.sh
+./concert-utils/helpers/concert_upload_data.sh --outputdir ${OUTPUTDIR}

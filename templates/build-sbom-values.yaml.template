@@ -1,7 +1,7 @@
 concert:
   builds:
   - component_name: "${COMPONENT_NAME}"
-    output_file: "${BUILD_FILE_NAME}" # optional
+    output_file: "${BUILD_FILENAME}" # optional
     app_name: "${APP_NAME}"
     number: "${BUILD_NUMBER}"
     version: "${APP_VERSION}"

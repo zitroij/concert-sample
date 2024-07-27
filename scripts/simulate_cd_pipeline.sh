@@ -15,7 +15,7 @@ export OUTPUTDIR=${sourcecodedir}/concert_data
 echo "#####"
 echo "# gen concert deploy inventory #"
 echo "####"
-export DEPLOY_FILE_NAME="${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"
+export DEPLOY_FILENAME="${COMPONENT_NAME}-deploy-inventory-${BUILD_NUMBER}.json"
 
 CONCERT_DEF_CONFIG_FILE=build-${COMPONENT_NAME}-${BUILD_NUMBER}-config.yaml
 envsubst < ${SCRIPT_DIR}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}

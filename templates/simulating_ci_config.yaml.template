@@ -16,7 +16,7 @@ app:
 input-data:
   build:
     files:
-    - "/toolkit-data/${BUILD_FILE_NAME}"
+    - "/toolkit-data/${BUILD_FILENAME}"
   cyclonedx:
     files:
     - "/toolkit-data/${CYCLONEDX_FILENAME}"

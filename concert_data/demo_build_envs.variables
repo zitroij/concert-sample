@@ -1,7 +1,7 @@
 ######
 # Common Variables
 ###
-export CONCERT_TOOLKIT_IMAGE="cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest"ß
+export CONCERT_TOOLKIT_IMAGE="cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest"
 export CONCERT_TOOLKIT_UTILS_REPO="git@github.ibm.com:roja/concert-utils.git"
 export CONCERT_URL="your concert_url"
 export INSTANCE_ID="0000-0000-0000-0000"

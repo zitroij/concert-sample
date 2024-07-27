@@ -10,18 +10,26 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
 
+export OUTPUTDIR=${sourcecodedir}/concert_data
+
+###
+# application toolkit config yaml
+###
 export APP_FILE_NAME="${APP_NAME}-${APP_VERSION}-application.json"
+
+CONCERT_DEF_CONFIG_FILE=app-${APP_NAME}-${APP_VERSION}-config.yaml
+envsubst < ${scriptdir}/${TEMPLATE_PATH}/app-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# gen concert app inventory"
-echo "# ./concert-utils/helpers/gen-concert-application.sh --outputfile ${APP_FILE_NAME}"
+echo "# ./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
 echo "####"
 
-./concert-utils/helpers/gen-concert-application.sh --outputfile ${APP_FILE_NAME}
+./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# send to concert stage"
 echo "#####"
 
-envsubst < ${OUTPUTDIR}/application_def_load_config.yaml.template > ${OUTPUTDIR}/config.yaml
+envsubst < ${scriptdir}/${TEMPLATE_PATH}/application_def_load_config.yaml.template > ${OUTPUTDIR}/config.yaml
 ./concert-utils/helpers/concert_upload_data.sh

@@ -16,4 +16,4 @@ app:
 input-data:
   deploy:
     files:
-    - "/toolkit-data/${DEPLOY_FILE_NAME}"
+    - "/toolkit-data/${DEPLOY_FILENAME}"

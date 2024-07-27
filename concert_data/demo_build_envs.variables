@@ -1,7 +1,12 @@
+####
+# template_scripts
+####
+export TEMPLATE_PATH=../templates
+
 ######
 # Common Variables
 ###
-export CONCERT_TOOLKIT_IMAGE="cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest"ß
+export CONCERT_TOOLKIT_IMAGE="cp.stg.icr.io/cp/concert/toolkit/ibm-concert-toolkit:latest"
 export CONCERT_TOOLKIT_UTILS_REPO="git@github.ibm.com:roja/concert-utils.git"
 export CONCERT_URL="your concert_url"
 export INSTANCE_ID="0000-0000-0000-0000"
@@ -26,7 +31,10 @@ export CONTACT_EMAIL="myemail@acme.com"
 export CONCAT_PHONE="(123) 123-1234"
 
 export APPLICATION_CRITICALITY=5
-
+export END_POINT_NAME="concert-sample_api"
+export ACCESS_POINT_NAME=${END_POINT_NAME}
+export COMPONENT_ENDPOINTS="/concert-sample"
+export NETWORK_EXPOSURE="public"
 ###
 # emulating a Build Inventory SBOM specific vaiable 
 ###
@@ -52,5 +60,4 @@ export CLUSTER_REGION="us-east-1"
 export CLUSTER_NAME="my_rosa_cluster"
 export CLUSTER_NAMESPACE="concert-sample"
 export ENVIRONMENT_TARGET="production"
-export ACCESS_POINT_NAME="concert-sample-api"
 export APP_URL="https://internal.mycompany.io/myappservice"

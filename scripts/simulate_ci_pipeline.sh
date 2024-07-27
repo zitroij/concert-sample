@@ -42,7 +42,7 @@ echo "#####"
 echo "# gen concert build inventory (build sbom) "
 echo "# ./concert-utils/helpers/gen-build-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
 echo "#####"
-./concert-utils/helpers/gen-build-inventory.sh --outputfir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
+./concert-utils/helpers/gen-build-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 
 echo "#####"

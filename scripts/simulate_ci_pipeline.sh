@@ -36,8 +36,8 @@ echo "#####"
 
 export BUILD_FILE_NAME="${COMPONENT_NAME}-build-inventory-${BUILD_NUMBER}.json"
 CONCERT_DEF_CONFIG_FILE=build-${COMPONENT_NAME}-${BUILD_NUMBER}-config.yaml
-echo "envsubst < ${sourcecodedir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}"
-envsubst < ${sourcecodedir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
+echo "envsubst < ${scriptdir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}"
+envsubst < ${scriptdir}/${TEMPLATE_PATH}/build-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# gen concert build inventory (build sbom) "

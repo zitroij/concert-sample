@@ -12,9 +12,6 @@ source ${VARIABLES_FILE}
 
 export APP_FILE_NAME="${APP_NAME}-${APP_VERSION}-application.json"
 
-export TIMESTAMP_UTC=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
-export CONCERT_APP_URN=${CONCERT_URN_PREFIX}:${APP_NAME}
-
 ###
 # build application toolkit yaml
 ###

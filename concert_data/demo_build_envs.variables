@@ -1,3 +1,8 @@
+####
+# template_scripts
+####
+export TEMPLATE_PATH=../templates
+
 ######
 # Common Variables
 ###

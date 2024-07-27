@@ -53,4 +53,4 @@ echo "# send to concert stage #"
 echo "#./concert-utils/helpers/concert_upload_data.sh"
 echo "#####"
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
-./concert-utils/helpers/concert_upload_data.sh
+./concert-utils/helpers/concert_upload_data.sh --outputdir ${OUTPUTDIR}

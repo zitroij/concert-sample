@@ -32,4 +32,4 @@ echo "# send to concert stage"
 echo "#####"
 
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/application_def_load_config.yaml.template > ${OUTPUTDIR}/config.yaml
-./concert-utils/helpers/concert_upload_data.sh
+./concert-utils/helpers/concert_upload_data.sh --outputdir ${OUTPUTDIR}

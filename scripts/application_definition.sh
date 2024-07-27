@@ -10,12 +10,11 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
 
-export APP_FILE_NAME="${APP_NAME}-${APP_VERSION}-application.json"
 
 ###
-# build application toolkit yaml
+# application toolkit config yaml
 ###
-
+export OUTPUT_FILENAME="${APP_NAME}-${APP_VERSION}-application.json"
 CONCERT_DEF_CONFIG_FILE=app-${APP_NAME}-${APP_VERSION}-config.yaml
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/app-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 

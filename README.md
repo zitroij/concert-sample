@@ -39,7 +39,7 @@ The sample is simulating a CI/CD pipeline and how is integated into concert.  We
 1) go to <yourpath>/concert-sample/scripts
 2) run the application _definition.sh sample.  This is only done once, or when updates to the application definition needs to be done.  This provides conncert with initial details of the application and which future data will be provided to construt the Application Inventory and Arena view. 
    ./application_definition.sh
-3) run the simulate_ci_pipeline.sh sample.  This is only done on every CI will generate application assets (image, sbom(code scan), Image scan(Sbom, cve report)) to represent a commited version that can be release to any environment including quality environments.
+3) run the simulate_ci_pipeline.sh sample.  This is only done on every CI will generate application assets (image, cycloncedx sbom(code scan), concert build sbom) to represent a commited version that can be release to any environment including quality environments.
    ./simulate_ci_pipeline.sh
 4) run the simulate_cd_pipeline.sh sample.  This is only done on every CI will generate application assets (image, sbom(code scan), Image scan(Sbom, cve report)) to represent a commited version that can be release to any environment including quality environments.
    ./simulate_cdpipeline.sh

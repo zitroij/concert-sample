@@ -7,7 +7,7 @@ export TEMPLATE_PATH=../templates
 # Common Variables
 ###
 export CONCERT_TOOLKIT_IMAGE="icr.io/cpopen/ibm-concert-toolkit:latest"
-export CONCERT_TOOLKIT_UTILS_REPO="git@github.ibm.com:roja/concert-utils.git"
+export CONCERT_TOOLKIT_UTILS_REPO="git@github.com:IBM/concert/concert-utils.git"
 export CONCERT_URL="your concert_url"
 export INSTANCE_ID="0000-0000-0000-0000"
 export USER_NAME="concert_user_name"
@@ -41,7 +41,7 @@ export NETWORK_EXPOSURE="public"
 export REPO_NAME="concert-sample"
 export REPO_URL="https://github.ibm.com/roja/concert-sample"
 export REPO_BRANCH="main"
-export BUILD_NUMBER="1"
+export BUILD_NUMBER=1
 export IMAGE_NAME="localhost/concert-sample"
 export IMAGE_TAG="sample"
 export INVENTORY_BUILD=${BUILD_NUMBER}

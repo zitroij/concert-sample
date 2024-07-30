@@ -60,6 +60,6 @@ echo "#####"
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
 ./concert-utils/helpers/concert_upload.sh --outputdir ${OUTPUTDIR}
 
-echo "export INVENTORY_BUILD=${BUILD_NUMBER}" > ${VARIABLES_FILE}
+echo "export INVENTORY_BUILD=${BUILD_NUMBER}" >> ${VARIABLES_FILE}
 newbuild=${BUILD_NUMBER} + 1
-echo export BUILD_NUMBER=${newbuild}  > ${VARIABLES_FILE}
+echo export BUILD_NUMBER=${newbuild}  >> ${VARIABLES_FILE}

@@ -21,12 +21,12 @@ CONCERT_DEF_CONFIG_FILE=deploy-${COMPONENT_NAME}-${BUILD_NUMBER}-config.yaml
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/deploy-sbom-values.yaml.template > ${OUTPUTDIR}/${CONCERT_DEF_CONFIG_FILE}
 
 echo "generating deploy sbom"
-echo "./concert-utils/helpers/gen-deploy-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}" 
-./concert-utils/helpers/gen-deploy-inventory.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
+echo "./concert-utils/helpers/create-deploy-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}" 
+./concert-utils/helpers/create-deploy-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 ###
 # upload build file
 ###
 #echo "generating config file inventory json ${OUTPUTDIR}/${outfile_name} "
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/simulating_cd_config.yaml.template > ${OUTPUTDIR}/config.yaml
-./concert-utils/helpers/concert_upload_data.sh --outputdir ${OUTPUTDIR}
+./concert-utils/helpers/concert_upload.sh --outputdir ${OUTPUTDIR}

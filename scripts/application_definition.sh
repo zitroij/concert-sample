@@ -22,14 +22,14 @@ envsubst < ${scriptdir}/${TEMPLATE_PATH}/app-sbom-values.yaml.template > ${OUTPU
 
 echo "#####"
 echo "# gen concert app inventory"
-echo "# ./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
+echo "# ./concert-utils/helpers/create-application-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
 echo "####"
 
-./concert-utils/helpers/gen-concert-application.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
+./concert-utils/helpers/create-application-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"
 echo "# send to concert stage"
 echo "#####"
 
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/application_def_load_config.yaml.template > ${OUTPUTDIR}/config.yaml
-./concert-utils/helpers/concert_upload_data.sh --outputdir ${OUTPUTDIR}
+./concert-utils/helpers/concert_upload.sh --outputdir ${OUTPUTDIR}

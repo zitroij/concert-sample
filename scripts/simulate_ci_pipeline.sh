@@ -10,8 +10,14 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
 
+
 export OUTPUTDIR=${sourcecodedir}/concert_data
 export SRC_PATH=${sourcecodedir}/src
+
+mkdir ${OUTPUTDIR}/${BUILD_NUMBER}
+export OUTPUTDIR=${OUTPUTDIR}/${BUILD_NUMBER}
+
+echo "all files generated from this script will be save here ${OUTPUTDIR}"
 
 echo "#####"
 echo "# source scanning stage #"
@@ -53,3 +59,7 @@ echo "#./concert-utils/helpers/concert_upload_data.sh"
 echo "#####"
 envsubst < ${scriptdir}/${TEMPLATE_PATH}/simulating_ci_config.yaml.template > ${OUTPUTDIR}/config.yaml
 ./concert-utils/helpers/concert_upload.sh --outputdir ${OUTPUTDIR}
+
+echo "export INVENTORY_BUILD=${BUILD_NUMBER}" > ${VARIABLES_FILE}
+newbuild=${BUILD_NUMBER} + 1
+echo export BUILD_NUMBER=${newbuild}  > ${VARIABLES_FILE}

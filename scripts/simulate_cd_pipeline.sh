@@ -10,7 +10,9 @@ VARIABLES_FILE=${sourcecodedir}/concert_data/demo_build_envs.variables
 
 source ${VARIABLES_FILE}
 
-export OUTPUTDIR=${sourcecodedir}/concert_data
+export OUTPUTDIR=${sourcecodedir}/concert_data/${INVENTORY_BUILD}
+echo "all files generated from this script will be save here ${OUTPUTDIR}"
+echo ""
 
 echo "#####"
 echo "# gen concert deploy inventory #"

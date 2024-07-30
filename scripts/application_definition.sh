@@ -12,6 +12,8 @@ source ${VARIABLES_FILE}
 
 export OUTPUTDIR=${sourcecodedir}/concert_data
 
+echo "all files generated from this script will be save here ${OUTPUTDIR}"
+
 ###
 # application toolkit config yaml
 ###

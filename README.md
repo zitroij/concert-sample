@@ -1,3 +1,6 @@
+
+[TOC]
+
 # concert-sample
 
 This samples has been tested on linux system.  Working on testing on macos with proper docker runtime. 
@@ -7,6 +10,7 @@ The sample is simulating a CI/CD pipeline and how is integated into concert.  We
 ## Pre-requisites
 
 1) docker or podman running on the environment, or podman configure with the docker emulation.
+
 
 ## Setup Instruction
 
@@ -22,7 +26,7 @@ The sample is simulating a CI/CD pipeline and how is integated into concert.  We
          username: "<your_username>"
          password: "<your_password>"
 
-3) for advance users advance changes a set of variables are provided in concert-samples/concert_data/demo_build_envs.variables that help control the behavior of the scripts.
+3) for advance users advance changes a set of variables are provided in [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables).variables that help control the behavior of the scripts.
    The following are typical variables you can change:
       APP_NAME
       APP_VERSION
@@ -43,3 +47,12 @@ The sample is simulating a CI/CD pipeline and how is integated into concert.  We
    ./simulate_ci_pipeline.sh
 4) run the simulate_cd_pipeline.sh sample.  This is only done on every CI will generate application assets (image, sbom(code scan), Image scan(Sbom, cve report)) to represent a commited version that can be release to any environment including quality environments.
    ./simulate_cdpipeline.sh
+
+## Notes
+
+If you are using podman versus docker please update the following environment in the [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables)
+export CONTAINER_COMMAND="docker run" to export CONTAINER_COMMAND="podman run"
+
+if you run into problems running the container due to missing options or other problems with user permissions please update the following variable in [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables):
+
+export OPTIONS="-it --rm -u $(id -u):$(id -g)" 

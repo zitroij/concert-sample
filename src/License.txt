@@ -411,7 +411,7 @@ m. For purposes of this Item 13.m, "Personal Data" refers to information relatin
 
 (b) Each party will ensure that Personal Data is protected in accordance with the security safeguards communicated and agreed to by the other.
 
-(c) Each party will ensure that any third party to whom Personal Data is transferred is bound by the applicable terms of this section.
+ Each party will ensure that any third party to whom Personal Data is transferred is bound by the applicable terms of this section.
 
 (d) Additional or different services required to comply with the Laws will be deemed a request for new services.
 
@@ -425,7 +425,7 @@ Each party agrees that Personal Data will only be used, accessed, managed, trans
 
 (b) Each party agrees to reimburse the other for any reasonable charges incurred in providing each other assistance.
 
-(c) Each party agrees to amend Personal Data only upon receiving instructions to do so from the other party or its personnel.
+ Each party agrees to amend Personal Data only upon receiving instructions to do so from the other party or its personnel.
 
 (5) Retention
 
@@ -615,7 +615,7 @@ The following replaces Item 13.e:
 
 (b) Business Contact Personnel - Licensee employees and contractors to whom the Business Contact Information relates.
 
-(c) Data Protection Authority - the authority established by the Data Protection and Electronic Communications Legislation in the applicable country or, for non-EU countries, the authority responsible for supervising the protection of personal data in that country, or (for any of the foregoing) any duly appointed successor entity thereto.
+ Data Protection Authority - the authority established by the Data Protection and Electronic Communications Legislation in the applicable country or, for non-EU countries, the authority responsible for supervising the protection of personal data in that country, or (for any of the foregoing) any duly appointed successor entity thereto.
 
 (d) Data Protection & Electronic Communications Legislation - (i) the applicable local legislation and regulations in force implementing the requirements of EU Directive 95/46/EC (on the protection of individuals with regard to the processing of personal data and on the free movement of such data) and of EU Directive 2002/58/EC (concerning the processing of personal data and the protection of privacy in the electronic communications sector); or (ii) for non-EU countries, the legislation and/or regulations passed in the applicable country relating to the protection of personal data and the regulation of electronic communications involving personal data, including (for any of the foregoing) any statutory replacement or modification thereof.
 

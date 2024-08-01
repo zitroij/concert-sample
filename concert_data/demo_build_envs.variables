@@ -28,6 +28,12 @@ export USER_NAME="concert_user_name"
 export PASSWORD="concert_user_password"
 
 ##
+# Container command and options used on this environment
+##
+export OPTIONS="-it --rm -u $(id -u):$(id -g)"
+export CONTAINER_COMMAND="docker run"
+
+##
 # Application Variabbles
 ##
 export APP_NAME="concert-sample-app"

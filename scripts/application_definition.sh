@@ -38,7 +38,6 @@ echo "#####"
 echo "# gen concert app inventory"
 echo "# ./concert-utils/helpers/create-application-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}"
 echo "####"
-
 ./concert-utils/helpers/create-application-sbom.sh --outputdir ${OUTPUTDIR} --configfile ${CONCERT_DEF_CONFIG_FILE}
 
 echo "#####"

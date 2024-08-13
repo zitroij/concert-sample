@@ -1,58 +1,73 @@
-
-[TOC]
-
 # concert-sample
 
-This samples has been tested on linux system.  Working on testing on macos with proper docker runtime. 
+This code was tested on a Linux system (our engineering team will test soon on a macOS system).
 
-The sample is simulating a CI/CD pipeline and how is integated into concert.  We will include a CD pipeline update, where we will emilate the release of an application to the target environment and the data that concert needs for that use case.
+This example simulates a CI/CD pipeline and its integration with Concert. It emulates a CI/CD pipeline update, where the release of an application is pushed to the target environment. During this flow, the CI/CD pipeline generates and sends the data that Concert needs.
 
 ## Pre-requisites
 
-1) docker or podman running on the environment, or podman configure with the docker emulation.
+1. `docker` running on your workstation (or `podman` configured with docker emulation).
 
+## Setup instructions
 
-## Setup Instruction
+1. Go to the `scripts` directory and run the `setup` script:
 
-1) switch to the concert-sample/scripts directoty and run setup command.
+   ```bash
    ./setup.sh
-2) Update environment details, switch to concert-sample/cncert_data.  Enter the proper information for the target environment you want to use on both configu files.
+   ```
 
-   app:
-   base_url: "<https://concert_url:concert_port>"
-   instance_id: "<your_instance_id>"
-   auth:
-      user:
-         username: "<your_username>"
-         password: "<your_password>"
+1. Go to the `concert_data` directory and update the `demo_build_envs.variables` file accordingly by entering the proper values for your target environment. The variables in the `demo_build_envs.variables` file control the behavior of the scripts in this repo. The following are typical variables you may want to update:
 
-3) for advance users advance changes a set of variables are provided in [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables).variables that help control the behavior of the scripts.
-   The following are typical variables you can change:
-      APP_NAME
-      APP_VERSION
-      COMPONENT_NAME
-      ENVIRONMENT_NAME_1
-      ENVIRONMENT_NAME_2
-      ENVIRONMENT_NAME_3
-      IMAGE_NAME
-      IMAGE_TAG
+* `CONCERT_URL` - Your Concert URL
+* `INSTANCE_ID` - For non-SaaS deployments of Concert, use `0000-0000-0000-0000`
+* `USER_NAME` - Your Concert username (e.g., `cpadmin`)
+* `PASSWORD` - Your Concert password
+* `APP_NAME` - Name of your application
+* `APP_VERSION` - Version of your application
+* `COMPONENT_NAME` - Your application component name
+* `ENVIRONMENT_NAME_1` - Name of the first environment where your application is hosted
+* `ENVIRONMENT_NAME_2` - Name of the second environment where your application is hosted
+* `ENVIRONMENT_NAME_3` - Name of the third environment where your application is hosted
+* `IMAGE_NAME` - The image name for your application component
+* `IMAGE_TAG` - The image tag for your application component
 
+## Running the example 
 
-## Run sample 
+1. Go to the `scripts` folder.
+1. Run the `application_definition.sh` script. You only need to run this script once *or* when updates to the application definition are required. This provides Concert with initial details of your application and of the forthcoming data to construct the Application inventory and Arena view.
 
-1) go to <yourpath>/concert-sample/scripts
-2) run the application _definition.sh sample.  This is only done once, or when updates to the application definition needs to be done.  This provides conncert with initial details of the application and which future data will be provided to construt the Application Inventory and Arena view. 
+   ```bash
    ./application_definition.sh
-3) run the simulate_ci_pipeline.sh sample.  This is only done on every CI will generate application assets (image, cycloncedx sbom(code scan), concert build sbom) to represent a commited version that can be release to any environment including quality environments.
+   ```
+
+1. Run the `simulate_ci_pipeline.sh` script. This simulates the generation of application assets (e.g., image, CycloneDX SBOM files, Concert Build SBOM file, etc.) to represent a commited version that can be released to any environment such as pre-production environments.
+
+   ```bash
    ./simulate_ci_pipeline.sh
-4) run the simulate_cd_pipeline.sh sample.  This is only done on every CI will generate application assets (image, sbom(code scan), Image scan(Sbom, cve report)) to represent a commited version that can be release to any environment including quality environments.
+   ```
+
+1. Run the `simulate_cd_pipeline.sh` script. This simulates the generation of application assets (e.g., image, CycloneDX SBOM files, Concert Build SBOM file, etc.) to represent a commited version that can be released to any environment such as pre-production environments.
+
+   ```bash
    ./simulate_cdpipeline.sh
+   ```
 
 ## Notes
 
-If you are using podman versus docker please update the following environment in the [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables)
-export CONTAINER_COMMAND="docker run" to export CONTAINER_COMMAND="podman run"
+If you use `podman` instead of `docker`, please update the following line in the `concert_data/demo_build_envs.variables` file, from
 
-if you run into problems running the container due to missing options or other problems with user permissions please update the following variable in [concert_data/demo_build_envs.variables](concert_data/demo_build_envs.variables):
+```bash
+export CONTAINER_COMMAND="docker run" 
+```
 
+to
+
+```bash
+export CONTAINER_COMMAND="podman run"
+```
+
+If you run into problems running the container due to missing options or other problems with user permissions, please update the following variable definition in the `concert_data/demo_build_envs.variables` file:
+
+```bash
 export OPTIONS="-it --rm -u $(id -u):$(id -g)" 
+```

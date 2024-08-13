@@ -49,7 +49,7 @@ This example simulates a CI/CD pipeline and its integration with Concert. It emu
 1. Run the `simulate_cd_pipeline.sh` script. This simulates the generation of application assets (e.g., image, CycloneDX SBOM files, Concert Build SBOM file, etc.) to represent a commited version that can be released to any environment such as pre-production environments.
 
    ```bash
-   ./simulate_cdpipeline.sh
+   ./simulate_cd_pipeline.sh
    ```
 
 ## Notes

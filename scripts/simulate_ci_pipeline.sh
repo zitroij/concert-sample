@@ -33,9 +33,9 @@ echo "all files generated from this script will be save here ${OUTPUTDIR}"
 
 echo "#####"
 echo "# source scanning stage #"
-echo "# ./concert-utils/helpers/create-code-cyclondx-sbom.sh --outputfile ${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json "
+echo "# ./concert-utils/helpers/create-code-cyclondx-sbom.sh --outputfile ${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json --cdxgen-args "--project-name ${COMPONENT_SOURCECODE_REPO_NAME} --project-version ${COMPONENT_VERSION}" "
 echo "#####"
-./concert-utils/helpers/create-code-cyclondx-sbom.sh --outputfile "${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json"
+./concert-utils/helpers/create-code-cyclondx-sbom.sh --outputfile "${REPO_NAME}-cyclonedx-sbom-${BUILD_NUMBER}.json --cdxgen-args "--project-name ${COMPONENT_SOURCECODE_REPO_NAME} --project-version ${COMPONENT_VERSION}" "
 
 echo "#####"
 echo "# build image stage #"
